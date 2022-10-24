@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  task_cron:
+    build:
+      context: .
+      dockerfile: compose/Dockerfile
+    image: image_local_task_cron
+    container_name: task_cron
+    volumes:
+      - .:/app:z
+    env_file:
+      - .envs/.local
